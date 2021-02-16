@@ -1,0 +1,38 @@
+# Input pipeline
+load.name = 'HAPT'
+load.data_dir = '/home/data'
+load.window_size = 250
+load.window_shift = 125
+load.batch_size = 256
+load.buffer_size = 512
+load.tfrecord_exist = False
+
+preprocessing.method=[]
+
+# Architectures
+sequence_LSTM_model.dropout_rate = 0.5
+sequence_BiLSTM_model.dropout_rate = 0.5
+
+sequence_GRU_model.dropout_rate = 0.5
+sequence_BiGRU_model.dropout_rate = 0.5
+
+sequence_Conv1D_model.dropout_rate = 0.5
+sequence_Conv1D_model.initial_units = 64
+sequence_Conv1D_model.block_number = 4
+sequence_BiConv1D_model.dropout_rate = 0.5
+sequence_BiConv1D_model.initial_units = 64
+sequence_BiConv1D_model.block_number = 4
+
+sequence_RNN_Fourier_model.dropout_rate = 0.5
+
+sequence_Ensemble_model.dropout_rate = 0.5
+
+sequence_RNN_Fourier_model.dropout_rate = 0.5
+
+Seq2Seq.units = 128
+
+# Training
+Trainer.total_steps = 10000
+Trainer.log_interval = 100
+Trainer.ckpt_interval = 100
+Trainer.learning_rate = 1e-4
